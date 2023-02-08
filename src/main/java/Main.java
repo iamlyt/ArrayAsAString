@@ -25,14 +25,31 @@ public class Main {
     public static String arrayAsString(int[][] array) {
         StringBuilder string = new StringBuilder();
 
-        // iterate through the size of array
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                // values in each row of the array
-                string.append(array[i][j]);
-            }
-        }
-        return string.toString();
+        // forloop
+        // iterate through array of array
+//        for (int i = 0; i < array.length; i++) {
+//
+//            for (int j = 0; j < array[i].length; j++) {
+//                // affix elements in each row
+//                string.append(array[i][j]);
+//            }
+//            // affix a line break
+//            string.append("\n");
+//        }
+//        // string representation
+//        return string.toString();
 
+        // foreach -- array of array
+        for (int[] row : array) {
+            // this is where the elements are
+            for (int col : row) {
+                // append each element in that row
+                string.append(col);
+            }
+            // line break
+            string.append("\n");
+        }
+        // string representation
+        return string.toString();
     }
 }
